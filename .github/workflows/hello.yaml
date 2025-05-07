@@ -1,0 +1,21 @@
+name: Hello World Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Echo a message
+        run: echo "✅ GitHub Actions is working"
+
+      - name: Upload dummy artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dummy-file
+          path: README.md
